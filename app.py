@@ -79,33 +79,7 @@ if not st.session_state.logged_in:
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.stop()
-    st.markdown("## Open Platform Pages")
-
-if st.session_state.role == "supplier":
-    st.page_link(
-        "pages/1_📥_Supplier_Submission.py",
-        label="📥 Open Supplier Submission Form",
-        icon="📥"
-    )
-
-if st.session_state.role == "manager":
-    st.page_link(
-        "pages/2_📊_Manager_Dashboard.py",
-        label="📊 Open Manager Dashboard",
-        icon="📊"
-    )
-
-    st.page_link(
-        "pages/3_🧪_LAB_Analysis.py",
-        label="🧪 Open LAB Analysis",
-        icon="🧪"
-    )
-
-    st.page_link(
-        "pages/5_📄_Reports.py",
-        label="📄 Open Reports",
-        icon="📄"
-    )
+    st.info("Use the sidebar to open the available pages.")
 
 # SIDEBAR
 st.sidebar.success(f"Logged in as: {st.session_state.role}")
