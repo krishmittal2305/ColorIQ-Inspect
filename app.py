@@ -63,12 +63,12 @@ if not st.session_state.logged_in:
 
         if st.button("Login"):
 
-            if username == "supplier" and password == "1234":
+            if username == "supplier" and password == "1591":
                 st.session_state.logged_in = True
                 st.session_state.role = "supplier"
                 st.rerun()
 
-            elif username == "manager" and password == "admin123":
+            elif username == "manager" and password == "admin1191":
                 st.session_state.logged_in = True
                 st.session_state.role = "manager"
                 st.rerun()
@@ -79,6 +79,33 @@ if not st.session_state.logged_in:
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.stop()
+    st.markdown("## Open Platform Pages")
+
+if st.session_state.role == "supplier":
+    st.page_link(
+        "pages/1_📥_Supplier_Submission.py",
+        label="📥 Open Supplier Submission Form",
+        icon="📥"
+    )
+
+if st.session_state.role == "manager":
+    st.page_link(
+        "pages/2_📊_Manager_Dashboard.py",
+        label="📊 Open Manager Dashboard",
+        icon="📊"
+    )
+
+    st.page_link(
+        "pages/3_🧪_LAB_Analysis.py",
+        label="🧪 Open LAB Analysis",
+        icon="🧪"
+    )
+
+    st.page_link(
+        "pages/5_📄_Reports.py",
+        label="📄 Open Reports",
+        icon="📄"
+    )
 
 # SIDEBAR
 st.sidebar.success(f"Logged in as: {st.session_state.role}")
